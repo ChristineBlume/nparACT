@@ -1,0 +1,4 @@
+.lintr
+.gitignore
+^cran-comments\.md$
+^revdep$
