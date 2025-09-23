@@ -9,4 +9,5 @@ The nparACT package
 
 First NEWS update. All changes will be documented in this file from now
 on. Fixed unknown issues that led to removal from CRAN earlier this
-year.
+year. Roxygen was now used to build the package and potential issues
+with running the worked example have been solved.
