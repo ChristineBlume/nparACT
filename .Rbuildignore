@@ -6,3 +6,8 @@
 ^NEWS.html
 ^cran-comments\.md$
 ^CRAN-SUBMISSION$
+^\.git$              # git metadata
+^\.github$           # GitHub workflows, issue templates, etc.
+^\.gitignore$        # local ignore rules
+^\.DS_Store$         # macOS Finder cruft
+^revdep$             # reverse dependency checks
