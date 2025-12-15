@@ -10,7 +10,7 @@
 #' pre-processed, optionally restricted to complete 24-hour periods,
 #' and analysed using standard non-parametric actigraphy algorithms.
 #'
-#' @param name Character string giving the name of the object in the
+#' @param path Character string giving the name of the object in the
 #' workspace that contains the actigraphy data.
 #' @param SR Numeric. Sampling rate in Hertz (samples per second).
 #' @param cutoff Numeric. Activity threshold used to classify movement.
