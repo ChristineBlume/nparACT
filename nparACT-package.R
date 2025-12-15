@@ -11,4 +11,4 @@
 #'
 #' @docType package
 #' @name nparACT
-NULL
+"_PACKAGE"
