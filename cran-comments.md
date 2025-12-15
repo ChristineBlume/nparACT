@@ -19,5 +19,5 @@ No ERRORs, WARNINGs, or NOTEs.
 ## Downstream dependencies
 Reverse dependency checks were run; no issues found.
 
-## Package archival and fixes
-This submission is a resubmission of the nparACT package, which was previously archived on CRAN (2025-06-17) because earlier issues were not addressed in time.  
+## Package fixes
+Fixed an error where package functions were not exported, which could lead to errors when calling high-level functions.Corrected package descriptions to ensure proper metadata and namespace handling.
