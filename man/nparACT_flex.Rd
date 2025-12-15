@@ -2,12 +2,7 @@
 % Please edit documentation in R/nparACT_flex.R
 \name{nparACT_flex}
 \alias{nparACT_flex}
-\title{Computes the classic non-parametric actigraphy measures
-interdaily stability (IS), intradaily variability (IV),
-and relative amplitude (RA), as well as the L5 and M10 values
-and their respective start times. In addition, the function
-computes a flexible low-activity period (Lflex) of user-defined
-duration and its start time for a single actigraphy file.}
+\title{Compute non-parametric actigraphy measures with a flexible low-activity window}
 \usage{
 nparACT_flex(name, SR, cutoff = 1, minutes, plot = T, fulldays = T)
 }
@@ -44,12 +39,19 @@ A data frame with one row and the following columns:
 }
 }
 \description{
+Computes the classic non-parametric actigraphy measures
+interdaily stability (IS), intradaily variability (IV),
+and relative amplitude (RA), as well as the L5 and M10 values
+and their respective start times. In addition, the function
+computes a flexible low-activity period (Lflex) of user-defined
+duration and its start time for a single actigraphy file.
+}
+\details{
 The function expects the actigraphy data to be available in the
 workspace under the name provided via \code{name}. Data are internally
 pre-processed, optionally restricted to complete 24-hour periods,
 and analysed using standard non-parametric actigraphy algorithms.
-}
-\details{
+
 The input data may contain either two columns (time, activity) or
 three columns (date, time, activity). Time variables are internally
 converted to \code{POSIXct}. Missing values in the activity signal

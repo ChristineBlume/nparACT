@@ -2,13 +2,8 @@
 % Please edit documentation in R/nparACT_flex_loop.R
 \name{nparACT_flex_loop}
 \alias{nparACT_flex_loop}
-\title{Computes the classic non-parametric actigraphy measures
-interdaily stability (IS), intradaily variability (IV),
-and relative amplitude (RA), as well as the L5 and M10 values
-and their respective start times. In addition, the function
-computes a flexible low-activity period (Lflex) of user-defined
-duration and its start time, looping over all actigraphy files
-contained in a specified directory.}
+\title{Compute non-parametric actigraphy measures with a flexible low-activity window
+for multiple files}
 \usage{
 nparACT_flex_loop(path, SR, cutoff = 1, minutes, plot = T, fulldays = T)
 }
@@ -45,10 +40,18 @@ A data frame with one row per processed file and the following columns:
 }
 }
 \description{
-Each file in the directory is processed independently using
-the same parameters. Results are returned as one row per file.
+Computes the classic non-parametric actigraphy measures
+interdaily stability (IS), intradaily variability (IV),
+and relative amplitude (RA), as well as the L5 and M10 values
+and their respective start times. In addition, the function
+computes a flexible low-activity period (Lflex) of user-defined
+duration and its start time, looping over all actigraphy files
+contained in a specified directory.
 }
 \details{
+Each file in the directory is processed independently using
+the same parameters. Results are returned as one row per file.
+
 Files in \code{path} are expected to be plain text or CSV files
 with either two columns (time, activity) or three columns
 (date, time, activity). Time variables are internally converted

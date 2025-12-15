@@ -1,7 +1,11 @@
+#' Internal functions for data plotting
+#'
+#' Internal helper functions used by the nparACT package.
+#'
+#' @keywords internal
+NULL
 nparACT_auxfunctions2 <- list(
 
-  #' @description Auxiliary function for plotting data.
-  #' @export
   nparACT_plot_hourly = function(data, data_hrs, SR){
     a <- nrow(data)
     hours <- nrow(data_hrs)
@@ -104,8 +108,7 @@ nparACT_auxfunctions2 <- list(
     print(p)
   },
 
-  #' @description Auxiliary function for plotting data.
-  #' @export
+
   nparACT_plot_hraverage = function(data, minaverage, start.time, a, SR){
     hraverage <- matrix(NA)
     for (i in 1:24){
@@ -152,8 +155,7 @@ nparACT_auxfunctions2 <- list(
     print(ppp)
   },
 
-  #' @description Auxiliary function for plotting data.
-  #' @export
+
   nparACT_plot_minaverage = function(data, minaverage, start.time, a, SR){
     daytime <- matrix(NA)
     time <- data$time
@@ -198,8 +200,7 @@ nparACT_auxfunctions2 <- list(
     print(pp)
   },
 
-  #' @description Auxiliary function for plotting data.
-  #' @export
+
   nparACT_plot_hraverage_GA_loop = function(matrix_hraverage){
     GA_hraverage <- colMeans(matrix_hraverage, na.rm = T)
     GA_hraverage_plot_time <- seq(1,24)-1

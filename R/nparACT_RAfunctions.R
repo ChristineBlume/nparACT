@@ -1,8 +1,10 @@
+#' Internal functions for RA computation
+#'
+#' Internal helper functions used by the nparACT package.
+#'
+#' @keywords internal
+NULL
 nparACT_RAfunctions <- list(
-
-  #' @description Functions calculating L5 and M10 values.
-
-  #' @export
   nparACT_L5M10 = function(data, minaverage, a, SR){
     ## ---- L5 values
     L5_matrix <- matrix(NA, 1440)
@@ -51,7 +53,6 @@ nparACT_RAfunctions <- list(
     return(result_RA)
   },
 
-  #' @export
   nparACT_L5M10Lflex = function(data, minaverage, a, SR, minutes){
     ## ---- L5 values (least active 5h period)
     L5_matrix <- matrix(NA, 1440)
