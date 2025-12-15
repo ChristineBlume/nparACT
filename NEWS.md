@@ -16,6 +16,8 @@ The nparACT package
 
 - Fixed an error where package functions were not exported, which could
   lead to errors when calling high-level functions.
+- Fixed necessary package descriptions and optimised the code for
+  Roxygen.
 
 ### nparACT 0.9.0 (2025-22-09)
 
