@@ -4,25 +4,24 @@
 \alias{nparACT_base_loop}
 \title{Compute classic non-parametric actigraphy measures for multiple files}
 \usage{
-nparACT_base_loop(path, SR, cutoff = 1, plot = T, fulldays = T)
+nparACT_base_loop(path, SR, cutoff = 1, plot = TRUE, fulldays = TRUE)
 }
 \arguments{
+\item{path}{Character string. Path to the folder containing actigraphy files.}
+
 \item{SR}{Numeric. Sampling rate in Hertz (samples per second).}
 
 \item{cutoff}{Numeric. Activity threshold used to classify movement.
 Defaults to 1.}
 
-\item{plot}{Logical. If \code{TRUE}, diagnostic plots of the hourly
-and minute-wise activity profiles are generated. Defaults to \code{TRUE}.}
+\item{plot}{Logical. If \code{TRUE}, generates diagnostic plots of the
+hourly grand-average activity profiles. Defaults to \code{TRUE}.}
 
 \item{fulldays}{Logical. If \code{TRUE}, data are truncated to include
 only complete 24-hour periods. Defaults to \code{TRUE}.}
-
-\item{name}{Character string giving the name of the object in the
-workspace that contains the actigraphy data.}
 }
 \value{
-A data frame with one row and the following columns:
+A data frame with one row per file and the following columns:
 \describe{
 \item{IS}{Interdaily stability}
 \item{IV}{Intradaily variability}
@@ -34,23 +33,19 @@ A data frame with one row and the following columns:
 }
 }
 \description{
-Computes the classic non-parametric actigraphy measures
+Computes the classic non-parametric actigraphy measures:
 interdaily stability (IS), intradaily variability (IV),
 relative amplitude (RA), as well as the L5 and M10 values
-and their respective start times, looping through all files in a folder.
+and their respective start times for all actigraphy files in a specified folder.
 }
 \details{
-The function expects the actigraphy data to be available in the
-workspace under the name provided via \code{name}. Data are internally
-pre-processed, optionally restricted to complete 24-hour periods,
-and analysed using standard non-parametric actigraphy algorithms.
-
-The input data may contain either two columns (time, activity) or
+Each file is expected to contain either two columns (time, activity) or
 three columns (date, time, activity). Time variables are internally
-converted to \code{POSIXct}. Missing values in the activity signal
-are not permitted.
+converted to \code{POSIXct}. Missing values in the activity signal are
+not permitted.
 
-The computation of IS and IV is based on hourly averaged activity data.
-Relative amplitude (RA) is derived from the difference between the
-most active 10-hour period (M10) and the least active 5-hour period (L5).
+Each file should contain either two columns (time, activity) or three columns (date, time, activity).
+Time variables are converted to POSIXct. Missing activity values are not allowed.
+The function filters activity, computes minute/hourly averages, calculates IS/IV/RA,
+and optionally plots grand-average activity profiles.
 }

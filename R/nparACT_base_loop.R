@@ -20,14 +20,10 @@
 #'   only complete 24-hour periods. Defaults to \code{TRUE}.
 #'
 #' @details
-#' The function internally:
-#' \itemize{
-#'   \item Filters activity data using the specified \code{cutoff}.
-#'   \item Computes minute-wise and hourly averages as required.
-#'   \item Calculates IS and IV from hourly averaged data.
-#'   \item Calculates RA from the difference between the M10 and L5 periods.
-#'   \item Optionally plots grand-average hourly activity profiles across all files.
-#' }
+#' Each file should contain either two columns (time, activity) or three columns (date, time, activity).
+#' Time variables are converted to POSIXct. Missing activity values are not allowed.
+#' The function filters activity, computes minute/hourly averages, calculates IS/IV/RA,
+#' and optionally plots grand-average activity profiles.
 #'
 #' @return
 #' A data frame with one row per file and the following columns:
@@ -40,10 +36,9 @@
 #'   \item{M10}{Mean activity during the most active 10-hour period}
 #'   \item{M10_starttime}{Start time of the M10 period}
 #' }
-#'
 #' @export
 nparACT_base_loop <-
-function (path, SR, cutoff=1, plot = T, fulldays = T){
+function (path, SR, cutoff=1, plot = TRUE, fulldays = TRUE){
   files <- list.files(path)
   fileext <- tools::file_ext(files[1])
   nofiles <- length(files)
