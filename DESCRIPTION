@@ -1,6 +1,6 @@
 Package: nparACT
 Title: Non-Parametric Measures of Actigraphy Data
-Version: 0.9.0
+Version: 0.9.1
 Authors@R: 
     person(given = "Christine",
            family = "Blume",
@@ -24,5 +24,6 @@ Depends:
     R (>= 3.5)
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    roxygen2
 VignetteBuilder: knitr
