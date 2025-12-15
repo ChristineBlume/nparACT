@@ -1,8 +1,56 @@
+#' Computes the classic non-parametric actigraphy measures
+#' interdaily stability (IS), intradaily variability (IV),
+#' and relative amplitude (RA), as well as the L5 and M10 values
+#' and their respective start times. In addition, the function
+#' computes a flexible low-activity period (Lflex) of user-defined
+#' duration and its start time for a single actigraphy file.
+#'
+#' The function expects the actigraphy data to be available in the
+#' workspace under the name provided via \code{name}. Data are internally
+#' pre-processed, optionally restricted to complete 24-hour periods,
+#' and analysed using standard non-parametric actigraphy algorithms.
+#'
+#' @param name Character string giving the name of the object in the
+#'   workspace that contains the actigraphy data.
+#' @param SR Numeric. Sampling rate in Hertz (samples per second).
+#' @param cutoff Numeric. Activity threshold used to classify movement.
+#'   Defaults to 1.
+#' @param minutes Numeric. Length of the flexible low-activity window
+#'   (Lflex) in minutes.
+#' @param plot Logical. If \code{TRUE}, diagnostic plots of the hourly
+#'   and minute-wise activity profiles are generated. Defaults to \code{TRUE}.
+#' @param fulldays Logical. If \code{TRUE}, data are truncated to include
+#'   only complete 24-hour periods. Defaults to \code{TRUE}.
+#'
+#' @details
+#' The input data may contain either two columns (time, activity) or
+#' three columns (date, time, activity). Time variables are internally
+#' converted to \code{POSIXct}. Missing values in the activity signal
+#' are not permitted.
+#'
+#' Interdaily stability (IS) and intradaily variability (IV) are computed
+#' from hourly averaged activity data. Relative amplitude (RA) is derived
+#' from the difference between the most active 10-hour period (M10) and
+#' the least active 5-hour period (L5). The flexible low-activity measure
+#' (Lflex) represents the least active contiguous period of the duration
+#' specified by \code{minutes}.
+#'
+#' @return
+#' A data frame with one row and the following columns:
+#' \describe{
+#'   \item{IS}{Interdaily stability}
+#'   \item{IV}{Intradaily variability}
+#'   \item{RA}{Relative amplitude}
+#'   \item{L5}{Mean activity during the least active 5-hour period}
+#'   \item{L5_starttime}{Start time of the L5 period}
+#'   \item{M10}{Mean activity during the most active 10-hour period}
+#'   \item{M10_starttime}{Start time of the M10 period}
+#'   \item{Lflex}{Mean activity during the least active flexible period}
+#'   \item{Lflex_starttime}{Start time of the Lflex period}
+#' }
+#'
 #' @export
 nparACT_flex <-
-
-  #' @description Computes the classic non-parametric actigraphy measures IS, IV, RA and the M10 and L5 values and their start timesas well as the Lflex value for a user-defined time window for a single file.
-
 function (name, SR, cutoff = 1, minutes, plot = T, fulldays = T){
   data <- get(name)
   if (is.data.frame(data)==F){
