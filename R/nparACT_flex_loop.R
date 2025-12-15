@@ -1,3 +1,6 @@
+#' Compute non-parametric actigraphy measures with a flexible low-activity window
+#' for multiple files
+#'
 #' Computes the classic non-parametric actigraphy measures
 #' interdaily stability (IS), intradaily variability (IV),
 #' and relative amplitude (RA), as well as the L5 and M10 values
