@@ -2,6 +2,7 @@ nparACT_ISIVfunctions <- list(
 
   #' @description Functions calculating IS and IV values.
 
+  #' @export
   nparACT_ISIV = function(data_hrs, bin_hr){
     n <- nrow(data_hrs)
     p <- 1440/bin_hr
@@ -19,6 +20,7 @@ nparACT_ISIVfunctions <- list(
     return(result_ISIV)
   },
 
+  #' @export
   nparACT_IS = function(data_hrs, mean_all, bin_hr){
     ## ---- IS numerator calculation
     result_ISnum <- matrix(NA, nrow = 24)
@@ -50,6 +52,7 @@ nparACT_ISIVfunctions <- list(
     return(return_IS)
   },
 
+  #' @export
   nparACT_IV = function(n, data_hrs, mean_all){
     result_IVnum <- matrix(NA, nrow = n)
     for (k in 2:n){

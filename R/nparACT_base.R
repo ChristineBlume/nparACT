@@ -1,3 +1,4 @@
+#' @export
 nparACT_base <-
   #' @description Computes the classic non-parametric actigraphy measures IS, IV, RA and the M10 and L5 values and their start times for a single file.
 

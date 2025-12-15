@@ -1,3 +1,4 @@
+#' @export
 nparACT_flex <-
 
   #' @description Computes the classic non-parametric actigraphy measures IS, IV, RA and the M10 and L5 values and their start timesas well as the Lflex value for a user-defined time window for a single file.

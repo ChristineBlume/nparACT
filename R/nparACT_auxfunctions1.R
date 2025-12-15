@@ -1,7 +1,7 @@
 nparACT_auxfunctions1 <- list(
 
   #' @description Auxiliary function preparing the data for the analyses.
-
+  #' @export
   nparACT_data_hrs = function(data, a, m){
     data_hrs <- matrix(NA, nrow = a/m)
     for (i in 1:(a/m)){
@@ -13,7 +13,7 @@ nparACT_auxfunctions1 <- list(
   },
 
   #' @description Auxiliary function preparing the data for the analyses.
-
+  #' @export
   nparACT_data_min = function(b, SR, data){
     data_min <- matrix(NA, b)
     for (d in 1:b){
@@ -24,7 +24,7 @@ nparACT_auxfunctions1 <- list(
   },
 
   #' @description Auxiliary function preparing the data for the analyses.
-
+  #' @export
   nparACT_filt = function(data, a, cutoff){
     for (k in 1:a){
       if (data$activity[k] < cutoff){
@@ -34,7 +34,7 @@ nparACT_auxfunctions1 <- list(
   },
 
   #' @description Auxiliary function creating minute-wise averages across 24 hours.
-
+  #' @export
   nparACT_minaverage = function(b, data_min){
     ## ---- Minutewise averages across 24hrs -> 1440 values
     c <- ceiling(b/1440)
@@ -49,7 +49,7 @@ nparACT_auxfunctions1 <- list(
 
 ## ---- Hourly averages
   #' @description Auxiliary function creating hourly averages.
-
+  #' @export
   nparACT_hraverage_GA_loop = function(minaverage, data, a , SR){
     hraverage <- matrix(NA)
     for (i in 1:24){

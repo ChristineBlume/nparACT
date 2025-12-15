@@ -3,6 +3,7 @@
 #' @importFrom utils read.csv read.table
 #' @importFrom tools file_ext
 
+#' @export
 nparACT_flex_loop <-
 
   #' @description Computes the classic non-parametric actigraphy measures IS, IV, RA and the M10 and L5 values and their start timesas well as the Lflex value for a user-defined time window looping through all files in a folder.
