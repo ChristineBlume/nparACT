@@ -14,7 +14,7 @@ No ERRORs, WARNINGs, or NOTEs.
   This appears to be spurious and is commonly reported by other package authors.
 
 * **Possibly mis-spelled words in DESCRIPTION ... NOTE**  
-  The flagged words (e.g. *Actigraphy, interdaily, ultradian, zeitgebers, et al.*) are domain-specific terms, author names, or standard Latin abbreviations. They are spelled correctly.
+  The flagged words (e.g. *Actigraphy, interdaily, ultradian, zeitgebers, et al., doi, ORCID*) are domain-specific terms, author names, or standard Latin abbreviations. They are spelled correctly.
 
 ## Downstream dependencies
 Reverse dependency checks were run; no issues found.
